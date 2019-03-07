@@ -73,7 +73,7 @@ public class BatchConfiguration {
  @Bean
  @StepScope
  FlatFileItemReader<Contact> fileReader(
-  @Value("file://#{jobParameters['file']}") Resource pathToFile)
+  @Value("file:#{jobParameters['file']}") Resource pathToFile)
   throws Exception {
   return new FlatFileItemReaderBuilder<Contact>().name("file-reader")
    .resource(pathToFile).targetType(Contact.class).delimited()
